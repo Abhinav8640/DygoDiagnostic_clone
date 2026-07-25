@@ -1317,5 +1317,40 @@
 
 <!-- <div class="whatsapp-fab">💬</div> -->
 
+        <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+        <script type="module">
+            import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+            createChat({
+                webhookUrl: 'https://official-abhinav.app.n8n.cloud/webhook/858e1426-dfeb-4232-85ba-18cc690af691/chat',
+                webhookConfig: {
+                    method: 'POST',
+                    headers: {}
+                },
+                target: '#n8n-chat',
+                mode: 'window',
+                chatInputKey: 'chatInput',
+                chatSessionKey: 'sessionId',
+                loadPreviousSession: true,
+                metadata: {},
+                showWelcomeScreen: true,
+                defaultLanguage: 'en',
+                initialMessages: [
+                    'Hi there! 👋',
+                    'How can I help you today with Dygo Diagnostics?'
+                ],
+                i18n: {
+                    en: {
+                        title: 'Dygo Diagnostics ',
+                        subtitle: "Start a chat. We're here to help you 24/7.",
+                        footer: '',
+                        getStarted: 'New Conversation',
+                        inputPlaceholder: 'Type your question..',
+                    },
+                },
+                enableStreaming: false,
+            });
+        </script>
 </body>
 </html>
